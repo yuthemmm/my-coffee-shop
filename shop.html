@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="text-align:center;">☕ Coffee Menu</h1>
+
+<div class="shop" id="shop"></div>
+
+<h2 style="text-align:center;">Total: $<span id="total">0</span></h2>
+
+<div style="text-align:center;">
+  <button onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+let coffees = [
+  {name:"Latte", price:3, img:"https://i.imgur.com/1.jpg"},
+  {name:"Cappuccino", price:4, img:"https://i.imgur.com/2.jpg"},
+  {name:"Espresso", price:2, img:"https://i.imgur.com/3.jpg"},
+  {name:"Mocha", price:5, img:"https://i.imgur.com/4.jpg"},
+  {name:"Americano", price:3, img:"https://i.imgur.com/5.jpg"},
+  {name:"Macchiato", price:4, img:"https://i.imgur.com/6.jpg"},
+  {name:"Cold Brew", price:5, img:"https://i.imgur.com/7.jpg"},
+  {name:"Iced Latte", price:4, img:"https://i.imgur.com/8.jpg"},
+  {name:"Caramel Latte", price:6, img:"https://i.imgur.com/9.jpg"},
+  {name:"Vanilla Latte", price:6, img:"https://i.imgur.com/10.jpg"}
+];
+
+let total = 0;
+
+let shop = document.getElementById("shop");
+
+coffees.forEach(coffee => {
+  let card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${coffee.img}">
+    <h3>${coffee.name}</h3>
+    <p>$${coffee.price}</p>
+    <button onclick="add(${coffee.price})">Buy</button>
+  `;
+
+  shop.appendChild(card);
+});
+
+function add(price) {
+  total += price;
+  document.getElementById("total").innerText = total;
+}
+
+function checkout() {
+  localStorage.setItem("total", total);
+  window.location.href = "checkout.html";
+}
+</script>
+
+</body>
+</html>

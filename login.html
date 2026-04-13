@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-bg">
+
+<div class="login-box">
+  <h2>☕ Coffee Shop</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<script>
+function login() {
+  window.location.href = "shop.html";
+}
+
+function signup() {
+  alert("Account created!");
+  window.location.href = "shop.html";
+}
+</script>
+
+</body>
+</html>

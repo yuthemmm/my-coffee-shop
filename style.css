@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Cute background */
+.login-bg {
+  background: url("https://i.imgur.com/8Km9tLL.jpg");
+  background-size: cover;
+}
+
+/* Login box */
+.login-box {
+  width: 300px;
+  margin: 150px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px pink;
+}
+
+.login-box input {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  background: brown;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Shop page */
+.shop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 180px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #fff3e6;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}

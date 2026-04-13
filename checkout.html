@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">Checkout</h2>
+
+<div style="text-align:center;">
+  <p>Total: $<span id="total"></span></p>
+
+  <input type="text" placeholder="Enter your address" id="address"><br><br>
+
+  <button onclick="pay()">Pay</button>
+
+  <div id="qr" style="display:none;">
+    <h3>Scan to Pay</h3>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=CoffeeShopPayment">
+  </div>
+</div>
+
+<script>
+document.getElementById("total").innerText = localStorage.getItem("total");
+
+function pay() {
+  let address = document.getElementById("address").value;
+
+  if(address == "") {
+    alert("Please enter address!");
+  } else {
+    document.getElementById("qr").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
